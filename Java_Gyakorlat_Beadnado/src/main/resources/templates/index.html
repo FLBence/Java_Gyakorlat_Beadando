@@ -48,6 +48,10 @@
                                 <li sec:authorize="isAuthenticated()">
                                     <a href="/logout">Kijelentkezés</a>
                                 </li>
+
+                                <li sec:authorize="hasRole('REG')">
+                                    <a href="/rest">RESTful</a>
+                                </li>
                             </ul>
                         </nav>
 					</header>
