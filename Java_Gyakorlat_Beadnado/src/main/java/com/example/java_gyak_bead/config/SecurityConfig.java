@@ -1,5 +1,5 @@
-package com.example.java_gyak_bead.Config;
-import com.example.java_gyak_bead.Services.CustomUserDetailsService;
+package com.example.java_gyak_bead.config;
+import com.example.java_gyak_bead.services.CustomUserDetailsService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -29,8 +29,11 @@ public class SecurityConfig {
         http
                 .csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/", "/login", "/register",
+                        .requestMatchers("/", "/fooldal", "/login", "/register",
                                 "/css/**", "/js/**", "/images/**").permitAll()
+
+                        .requestMatchers("/kapcsolat").authenticated()
+
                         .requestMatchers("/uzenetek/**").hasRole("REG")
                         .requestMatchers("/admin/**").hasRole("ADMIN")
                         .anyRequest().authenticated()

@@ -1,6 +1,6 @@
-package com.example.java_gyak_bead.Controller;
+package com.example.java_gyak_bead.controller;
 import com.example.java_gyak_bead.model.User;
-import com.example.java_gyak_bead.Repository.UserRepository;
+import com.example.java_gyak_bead.repository.UserRepository;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

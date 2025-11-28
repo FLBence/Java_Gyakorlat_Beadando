@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Beérkező üzenetek</title>
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+<body class="uzenetek-oldal">
+<a href="/" class="back-btn">Vissza</a>
+<h1>Beérkező üzenetek</h1>
+
+<table border="1">
+    <tr>
+        <th>Név</th>
+        <th>Email</th>
+        <th>Üzenet</th>
+        <th>Küldve</th>
+    </tr>
+
+    <tr th:each="u : ${uzenetek}">
+        <td th:text="${u.nev}"></td>
+        <td th:text="${u.email}"></td>
+        <td th:text="${u.uzenet}"></td>
+        <td th:text="${u.kuldve}"></td>
+    </tr>
+</table>
+
+</body>
+</html>

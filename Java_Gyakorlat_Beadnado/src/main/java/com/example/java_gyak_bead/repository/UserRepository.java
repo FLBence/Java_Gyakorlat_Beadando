@@ -1,4 +1,4 @@
-package com.example.java_gyak_bead.Repository;
+package com.example.java_gyak_bead.repository;
 
 import java.util.Optional;
 

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Főoldal</title>
+    <link rel="stylesheet" th:href="@{/css/main.css}">
+</head>
+
+<body class="fooldal-oldal">
+<a href="/" class="back-btn">Vissza</a>
+
+<div class="fooldal-kontener">
+    <div class="container-box">
+
+        <h1 class="text-center mb-4">Üdvözlünk a Forma–1 Adatbázis Alkalmazásban!</h1>
+
+        <p class="mb-4">
+            Ez a webalkalmazás a Forma–1 világához kapcsolódó adatok kezelését és megtekintését teszi lehetővé.
+            A rendszer különböző funkciókat biztosít a felhasználók és adminisztrátorok számára.
+        </p>
+
+        <h2>🔧 Funkciók</h2>
+        <ul>
+            <li>Pilóták adatainak megtekintése</li>
+            <li>Felhasználói regisztráció és bejelentkezés</li>
+            <li>Üzenetek küldése regisztrált felhasználóknak</li>
+            <li>Admin funkciók (adatkezelés, törlés, módosítás)</li>
+        </ul>
+
+        <h2 class="mt-4">🗄 Adatbázis</h2>
+        <p>
+            A projekt egy <strong>Forma–1 tematikájú adatbázist</strong> használ, amely az alábbi adatokat tartalmazza:
+        </p>
+        <ul>
+            <li>Pilóták adatai</li>
+            <li>Felhasználók és szerepköreik</li>
+            <li>Üzenetek</li>
+        </ul>
+
+        <h2 class="mt-4">🖥 Felhasznált technológiák</h2>
+        <ul>
+            <li>Java 17</li>
+            <li>Spring Boot, Spring MVC, Spring Security</li>
+            <li>Thymeleaf templaterendszer</li>
+            <li>MySQL adatbázis</li>
+            <li>JPA / Hibernate</li>
+            <li>HTML, CSS, Bootstrap</li>
+        </ul>
+
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,6 +1,6 @@
-package com.example.java_gyak_bead.Controller;
+package com.example.java_gyak_bead.controller;
 
-import com.example.java_gyak_bead.Repository.PilotaRepository;
+import com.example.java_gyak_bead.repository.PilotaRepository;
 import com.example.java_gyak_bead.model.Pilota;
 import org.springframework.web.bind.annotation.*;
 

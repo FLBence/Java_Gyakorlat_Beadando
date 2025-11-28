@@ -5,9 +5,10 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="/css/main.css">
 </head>
-<body>
+<body class="login-oldal">
+<a href="/" class="back-btn">Vissza</a>
 
-<div id="wrapper">
+<div class="login-kontener">
     <h2>Regisztráció</h2>
 
     <p th:if="${error}" th:text="${error}" style="color:red"></p>
@@ -23,8 +24,9 @@
         <p></p>
         <button type="submit">Regisztráció</button>
     </form>
-
-    <p><a href="/login">Már van fiókod? Jelentkezz be!</a></p>
+    <div class="regisztral">
+        Már van fiókod? <a th:href="@{/login}">Jelentkezz be!</a>
+    </div>
 </div>
 
 </body>

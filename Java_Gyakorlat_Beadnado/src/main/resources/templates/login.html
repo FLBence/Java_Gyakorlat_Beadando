@@ -2,12 +2,13 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Bejelentkezés</title>
+    <link rel="stylesheet" th:href="@{/css/main.css}">
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="/css/main.css">
 </head>
-<body>
+<body class="login-oldal">
+<a href="/" class="back-btn">Vissza</a>
 
-<div id="wrapper">
+<div class="login-kontener">
     <h2>Bejelentkezés</h2>
 
     <form th:action="@{/login}" method="post">
@@ -20,7 +21,10 @@
         <button type="submit">Belépés</button>
     </form>
 
-    <p><a href="/register">Nincs fiókod? Regisztrálj!</a></p>
+    <div class="regisztral">
+        Nincs fiókod? <a th:href="@{/register}">Regisztrálj!</a>
+    </div>
+
 </div>
 
 </body>

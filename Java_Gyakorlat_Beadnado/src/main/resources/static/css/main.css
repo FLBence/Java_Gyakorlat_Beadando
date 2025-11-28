@@ -1103,6 +1103,21 @@ input, select, textarea {
 	button {
 		line-height: calc(2.75rem - 2px);
 	}
+    .back-btn {
+        display: inline-block;
+        padding: 8px 14px;
+        background: #4a90e2;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        z-index: 9999;
+    }
+    .back-btn:hover {
+        background: #357abd;
+    }
 
 /* BG */
 
@@ -1140,9 +1155,12 @@ input, select, textarea {
 			-ms-transition-delay: 0.75s;
 			transition-delay: 0.75s;
 			background-image: linear-gradient(to top, rgba(19, 21, 25, 0.5), rgba(19, 21, 25, 0.5)), url("../../images/overlay.png");
-			background-size: auto, 256px 256px;
-			background-position: center, center;
-			background-repeat: no-repeat, repeat;
+			background-size: auto,
+ 256px 256px;
+			background-position: center,
+ center;
+			background-repeat: no-repeat,
+ repeat;
 			z-index: 2;
 		}
 
@@ -1656,3 +1674,272 @@ input, select, textarea {
 		body.is-preload #footer {
 			opacity: 0;
 		}
+
+        .adatbazis-oldal {
+            background: #1f1f1f;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+
+        .adatbazis-oldal h1 {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .adatbazis-oldal .container {
+            display: flex;
+            justify-content: space-around;
+            padding: 20px;
+        }
+
+        .adatbazis-oldal .table-box {
+            width: 30%;
+            background: #2e2e2e;
+            border-radius: 8px;
+            padding: 10px;
+            box-shadow: 0 0 10px #000;
+            overflow-y: auto;
+            max-height: 600px;
+        }
+
+        .adatbazis-oldal table {
+            width: 100%;
+            border-collapse: collapse;
+            color: white;
+        }
+
+        .adatbazis-oldal th,
+        .adatbazis-oldal td {
+            padding: 6px;
+            border-bottom: 1px solid #555;
+            font-size: 14px;
+        }
+
+        .adatbazis-oldal th {
+            background: #444;
+            position: sticky;
+            top: 0;
+            z-index: 2;
+        }
+
+        .kapcsolat-oldal {
+            background: #1f1f1f;
+            color: white;
+            font-family: Arial;
+        }
+
+        .kapcsolat-kontener {
+            width: 50%;
+            margin: auto;
+            margin-top: 40px;
+        }
+
+        .kapcsolat-kontener input, textarea {
+            width: 100%;
+            padding: 12px;
+            background: white; !important;
+            color: black; !important;
+            margin-bottom: 12px;
+            border-radius: 6px;
+            border: none;
+            font-size: 16px;
+        }
+
+        .kapcsolat-oldal input:focus,
+        .kapcsolat-oldal textarea:focus {
+            background: #ffffff !important;
+            color: #000 !important;
+            border: 1px solid #4CAF50;
+            outline: none;
+        }
+
+        .kapcsolat-kontener button {
+            padding: 12px 20px;
+            background: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .kapcsolat-kontener button:hover {
+            background: #45a049;
+        }
+
+        .kapcsolat-kontener .error {
+            color: #ff5252;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        .kapcsolat-kontener .success {
+            color: #4CAF50;
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .login-oldal {
+            background: #1e2226;
+            color: #fff;
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .login-kontener {
+            width: 350px;
+            background: #2a2f33;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.4);
+        }
+
+        .login-kontener h2 {
+            text-align: center;
+            margin-bottom: 25px;
+            font-size: 20px;
+            letter-spacing: 2px;
+        }
+
+        .login-kontener label {
+            display: block;
+            margin-top: 15px;
+            font-size: 14px;
+            color: #bfc4c9;
+        }
+
+        .login-kontener input {
+            width: 100%;
+            padding: 12px;
+            margin-top: 5px;
+            border-radius: 6px;
+            border: 1px solid #555;
+            background: #1c1f22;
+            color: #fff;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .login-kontener input:focus {
+            border-color: #00bcd4;
+            outline: none;
+        }
+
+        .login-kontener button {
+            width: 100%;
+            padding: 12px;
+            margin-top: 20px;
+            background: #00bcd4;
+            border: none;
+            border-radius: 6px;
+            color: #fff;
+            font-size: 15px;
+            cursor: pointer;
+            transition: 0.3s;
+            letter-spacing: 1px;
+        }
+
+        .login-kontener button:hover {
+            background: #00a0b6;
+        }
+
+        .login-kontener .regisztral {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 14px;
+        }
+
+        .login-kontener .regisztral a {
+            color: #00bcd4;
+            text-decoration: none;
+        }
+
+        .login-kontener .regisztral a:hover {
+            text-decoration: underline;
+        }
+
+        .uzenetek-oldal {
+            background: #1f1f1f;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+
+        .uzenetek-oldal h1 {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .uzenetek-oldal .container {
+            display: flex;
+            justify-content: space-around;
+            padding: 20px;
+        }
+
+        .uzenetek-oldal .table-box {
+            width: 30%;
+            background: #2e2e2e;
+            border-radius: 8px;
+            padding: 10px;
+            box-shadow: 0 0 10px #000;
+            overflow-y: auto;
+            max-height: 600px;
+        }
+
+        .uzenetek-oldal table {
+            width: 100%;
+            border-collapse: collapse;
+            color: white;
+        }
+
+        .uzenetek-oldal th,
+        .uzenetek-oldal td {
+            padding: 6px;
+            border-bottom: 1px solid #555;
+            font-size: 14px;
+        }
+
+        .uzenetek-oldal th {
+            background: #444;
+            position: sticky;
+            top: 0;
+            z-index: 2;
+        }
+
+        .fooldal-oldal {
+            background: #121212;
+            color: #eaeaea;
+            font-family: Arial, sans-serif;
+            min-height: 100vh;
+            margin: 0;
+            padding: 0;
+            position: relative;
+        }
+
+
+        .fooldal-oldal .center-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding-top: 120px;
+            width: 100%;
+        }
+
+
+        .fooldal-oldal .content-box {
+            width: 70%;
+            max-width: 900px;
+            background: #1e1e1e;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.4);
+            text-align: center;
+        }
+
+        .fooldal-oldal h1,
+        .fooldal-oldal h2 {
+            color: #00c8ff;
+            margin-bottom: 20px;
+        }

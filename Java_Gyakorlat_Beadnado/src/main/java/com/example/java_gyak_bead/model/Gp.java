@@ -1,6 +1,7 @@
 package com.example.java_gyak_bead.model;
 import jakarta.persistence.*;
-import java.util.Date;
+
+import java.time.LocalDate;
 
 @Entity
 @Table(name = "gp")
@@ -8,7 +9,7 @@ public class Gp {
 
     @Id
     @Column(name = "datum")
-    private Date datum;
+    private LocalDate datum;
 
     @Column(name = "nev")
     private String nev;
@@ -16,11 +17,11 @@ public class Gp {
     @Column(name = "helyszin")
     private String helyszin;
 
-    public Date getDatum() {
+    public LocalDate getDatum() {
         return datum;
     }
 
-    public void setDatum(Date datum) {
+    public void setDatum(LocalDate datum) {
         this.datum = datum;
     }
 

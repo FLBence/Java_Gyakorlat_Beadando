@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Kapcsolat</title>
+    <link rel="stylesheet" th:href="@{/css/main.css}">
+</head>
+<body class="kapcsolat-oldal">
+<a href="/" class="back-btn">Vissza</a>
+
+<div class="kapcsolat-kontener">
+
+    <h1>Kapcsolat</h1>
+
+    <form th:action="@{/kapcsolat}" th:object="${form}" method="post">
+
+        <label>Név:</label>
+        <input type="text" th:field="*{nev}">
+        <p class="error" th:if="${#fields.hasErrors('nev')}" th:errors="*{nev}"></p>
+
+        <label>Email:</label>
+        <input type="email" th:field="*{email}">
+        <p class="error" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></p>
+
+        <label>Üzenet:</label>
+        <textarea rows="5" th:field="*{uzenet}"></textarea>
+        <p class="error" th:if="${#fields.hasErrors('uzenet')}" th:errors="*{uzenet}"></p>
+
+        <button type="submit">Küldés</button>
+    </form>
+</div>
+
+</body>
+</html>

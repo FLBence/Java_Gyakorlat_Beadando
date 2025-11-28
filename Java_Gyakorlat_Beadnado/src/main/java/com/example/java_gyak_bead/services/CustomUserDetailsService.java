@@ -1,7 +1,7 @@
-package com.example.java_gyak_bead.Services;
+package com.example.java_gyak_bead.services;
 
 import com.example.java_gyak_bead.model.User;
-import com.example.java_gyak_bead.Repository.UserRepository;
+import com.example.java_gyak_bead.repository.UserRepository;
 import org.springframework.security.core.userdetails.*;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.stereotype.Service;
