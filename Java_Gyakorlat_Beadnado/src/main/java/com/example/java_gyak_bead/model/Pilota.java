@@ -1,6 +1,7 @@
 package com.example.java_gyak_bead.model;
 
 import jakarta.persistence.*;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
 
@@ -14,6 +15,8 @@ public class Pilota {
 
     private String nev;
     private Character nem;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    @Temporal(TemporalType.DATE)
     private Date szuldat;
     private String nemzet;
 

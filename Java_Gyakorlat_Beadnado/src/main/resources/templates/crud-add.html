@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="/css/main.css" />
+    <noscript><link rel="stylesheet" href="/css/noscript.css" /></noscript>
+    <title>Új pilóta</title>
+</head>
+<body>
+
+<h1>Új pilóta hozzáadása</h1>
+
+<form th:action="@{/crud/add}" th:object="${pilota}" method="post">
+    <label>ID:</label>
+    <input type="number" th:field="*{id}" style="color: black"/>
+
+    <label>Név:</label>
+    <input type="text" th:field="*{nev}" />
+
+    <label>Nem:</label>
+    <input type="text" th:field="*{nem}" maxlength="1" />
+
+    <label>Szül.dátum:</label>
+    <input type="date" th:field="*{szuldat}" style="color: black"/>
+
+    <label>Nemzet:</label>
+    <input type="text" th:field="*{nemzet}" />
+
+    <button type="submit">Mentés</button>
+    <a th:href="@{/crud}">Vissza</a>
+    <div th:if="${error}" style="color:red" th:text="${error}"></div>
+</form>
+
+</body>
+</html>

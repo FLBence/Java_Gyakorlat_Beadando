@@ -2,10 +2,10 @@
 <html xmlns:sec="http://www.w3.org/1999/xhtml">
 	<head>
 		<title>Dimension by HTML5 UP</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="/css/main.css" />
-		<noscript><link rel="stylesheet" href="/css/noscript.css" /></noscript>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+        <link rel="stylesheet" href="/css/main.css" />
+        <noscript><link rel="stylesheet" href="/css/noscript.css" /></noscript>
 	</head>
 	<body class="is-preload">
 
@@ -45,12 +45,21 @@
                                 </li>
 
                                 <li sec:authorize="isAuthenticated()">
+                                    <a href="/chart">Chart</a>
+                                </li>
+
+                                <li sec:authorize="isAuthenticated()">
+                                    <a href="/crud">CRUD</a>
+                                </li>
+
+                                <li sec:authorize="isAuthenticated()">
+                                    <a href="/rest">RESTful</a>
+                                </li>
+
+                                <li sec:authorize="isAuthenticated()">
                                     <a href="/logout">Kijelentkezés</a>
                                 </li>
 
-                                <li sec:authorize="hasRole('REG')">
-                                    <a href="/rest">RESTful</a>
-                                </li>
                             </ul>
                         </nav>
 					</header>

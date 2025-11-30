@@ -2,57 +2,77 @@ package com.example.java_gyak_bead.controller;
 
 import com.example.java_gyak_bead.repository.PilotaRepository;
 import com.example.java_gyak_bead.model.Pilota;
+import com.example.java_gyak_bead.services.CRUDService;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-
-@RestController
-@RequestMapping("/api/pilots")
+@Controller
+@RequestMapping("/crud")
 @CrossOrigin(origins = "*")
 public class PilotaController {
 
-    private final PilotaRepository repo;
+    private final CRUDService service;
 
-    public PilotaController(PilotaRepository repo) {
-        this.repo = repo;
+    public PilotaController(CRUDService service) {
+        this.service = service;
     }
 
-    // GET - összes pilóta
+    // GET: lista + üres űrlapok
     @GetMapping
-    public List<Pilota> getAll() {
-        return repo.findAll();
+    public String list(Model model) {
+        model.addAttribute("pilotak", service.getall());
+        model.addAttribute("ujPilota", new Pilota());
+        return "crud";
     }
 
-    // GET - egy pilóta id alapján
-    @GetMapping("/{id}")
-    public Pilota getById(@PathVariable Integer id) {
-        return repo.findById(id)
-                .orElseThrow(() -> new RuntimeException("Nincs ilyen pilóta: " + id));
+    @GetMapping("/add")
+    public String showAddForm(Model model) {
+        model.addAttribute("pilota", new Pilota());
+        return "crud-add";
     }
 
-    // POST - új pilóta
-    @PostMapping
-    public Pilota create(@RequestBody Pilota pilot) {
-        return repo.save(pilot);
+    // Új pilóta hozzáadása
+    @PostMapping("/add")
+    public String add(@ModelAttribute("pilota") Pilota pilota, Model model) {
+        try {
+            service.save(pilota);
+            return "redirect:/crud";
+        } catch (IllegalArgumentException ex) {
+            model.addAttribute("error", ex.getMessage());
+            return "crud-add";
+        }
     }
 
-    // PUT - pilóta módosítása
-    @PutMapping("/{id}")
-    public Pilota update(@PathVariable Integer id, @RequestBody Pilota newData) {
-        return repo.findById(id)
-                .map(p -> {
-                    p.setNev(newData.getNev());
-                    p.setNem(newData.getNem());
-                    p.setSzuldat(newData.getSzuldat());
-                    p.setNemzet(newData.getNemzet());
-                    return repo.save(p);
-                })
-                .orElseThrow(() -> new RuntimeException("Nincs ilyen pilóta: " + id));
+    // Keresés ID alapján
+    @GetMapping("/search")
+    public String search(@RequestParam Integer id, Model model) {
+        model.addAttribute("pilotak", service.getone(id).map(List::of).orElse(List.of()));
+        model.addAttribute("ujPilota", new Pilota());
+        return "crud";
     }
 
-    // DELETE - pilóta törlése
-    @DeleteMapping("/{id}")
-    public void delete(@PathVariable Integer id) {
-        repo.deleteById(id);
+    // Szerkesztés (külön oldalra)
+    @GetMapping("/edit/{id}")
+    public String showEditForm(@PathVariable Integer id, Model model) {
+        Pilota p = service.getone(id)
+                .orElseThrow(() -> new IllegalArgumentException("Nincs ilyen pilóta: " + id));
+        model.addAttribute("pilota", p);
+        return "crud-edit";
+    }
+
+    @PostMapping("/edit/{id}")
+    public String editSave(@PathVariable Integer id,
+                           @ModelAttribute("pilota") Pilota mod) {
+        service.update(id, mod);
+        return "redirect:/crud";
+    }
+
+    // Törlés gomb
+    @GetMapping("/delete/{id}")
+    public String delete(@PathVariable Integer id) {
+        service.delete(id);
+        return "redirect:/crud";
     }
 }

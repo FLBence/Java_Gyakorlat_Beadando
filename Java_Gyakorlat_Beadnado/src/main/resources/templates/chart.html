@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <title>F1 Pilóták Nemzetiségi Eloszlása</title>
+    <link rel="stylesheet" href="/css/main.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+<div style="width: 1000px; height: 700px; margin: 0 auto;">
+    <h2>F1 Pilóták Nemzetiségi Eloszlása</h2>
+    <canvas id="f1Chart" width="1000" height="600"></canvas>
+
+    <script th:inline="javascript">
+        const labels = /*[[${labels}]]*/ [];
+        const data = /*[[${data}]]*/ [];
+
+        const ctx = document.getElementById('f1Chart').getContext('2d');
+        const f1Chart = new Chart(ctx, {
+            type: 'pie',
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: 'Pilóták száma',
+                    data: data,
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.7)',
+                        'rgba(54, 162, 235, 0.7)',
+                        'rgba(255, 206, 86, 0.7)',
+                        'rgba(75, 192, 192, 0.7)',
+                        'rgba(153, 102, 255, 0.7)',
+                        'rgba(255, 159, 64, 0.7)'
+                    ],
+                    borderColor: 'rgba(255, 255, 255, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false, // fontos, hogy a div méretéhez igazodjon
+                plugins: {
+                    legend: {
+                        position: 'top',
+                        labels: {
+                            boxWidth: 10,
+                            boxHeight: 10,
+                            font: {
+                                size: 15
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</div>
+
+</body>
+</html>

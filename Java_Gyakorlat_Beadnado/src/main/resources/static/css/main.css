@@ -1943,3 +1943,57 @@ input, select, textarea {
             color: #00c8ff;
             margin-bottom: 20px;
         }
+
+        .table-container {
+            max-height: 600px;
+            overflow-y: auto;
+        }
+
+        .table-container thead th {
+            position: sticky;
+            top: 0;
+            background-color: #f1f1f1;
+            z-index: 1;
+        }
+        .row {
+            margin-bottom: 10px;
+        }
+
+        .search-form,
+        .add-form {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .search-form label,
+        .add-form label {
+            margin-right: 4px;
+            white-space: nowrap;
+        }
+
+        .search-form input,
+        .add-form input {
+            flex: 0 0 auto;
+            min-width: 120px;
+        }
+
+        .add-form,
+        .search-form {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .add-form label,
+        .search-form label {
+            white-space: nowrap;
+        }
+
+        .small-input {
+            width: 150px;
+            box-sizing: border-box;
+        }
+

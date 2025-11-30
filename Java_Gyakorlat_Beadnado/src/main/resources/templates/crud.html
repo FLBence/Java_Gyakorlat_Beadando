@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="/css/main.css" />
+    <noscript><link rel="stylesheet" href="/css/noscript.css" /></noscript>
+    <title>Pilóták</title>
+</head>
+<body>
+
+<h1>Pilóták</h1>
+
+<div class="row">
+    <form th:action="@{/crud/search}" method="get" class="search-form">
+        <label>ID keresés:</label>
+        <input type="number" name="id" style="color: black"/>
+        <button type="submit">Keresés</button>
+        <a th:href="@{/crud}">Összes</a>
+    </form>
+</div>
+
+<a th:href="@{/crud/add}">Új pilóta hozzáadása</a>
+
+<div class="table-container">
+<div class="table-box">
+<table border="1">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Név</th>
+        <th>Nem</th>
+        <th>Szül.dátum</th>
+        <th>Nemzet</th>
+        <th>Műveletek</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="p : ${pilotak}">
+        <td th:text="${p.id}"></td>
+        <td th:text="${p.nev}"></td>
+        <td th:text="${p.nem}"></td>
+        <td th:text="${#dates.format(p.szuldat, 'yyyy-MM-dd')}"></td>
+        <td th:text="${p.nemzet}"></td>
+        <td>
+            <a th:href="@{|/crud/edit/${p.id}|}">Szerkesztés</a>
+            <a th:href="@{|/crud/delete/${p.id}|}"
+               onclick="return confirm('Biztos törlöd?');">Törlés</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+</div>
+</div>
+</body>
+</html>

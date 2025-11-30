@@ -19,27 +19,23 @@
     </header>
 
     <div id="main">
-        <article>
             <h2 class="major">Felhasználók</h2>
             <table>
                 <thead>
                 <tr>
                     <th>Azonosító</th>
-                    <th>Név</th>
                     <th>Email</th>
                     <th>Jogosultság</th>
                 </tr>
                 </thead>
                 <tbody>
                 <tr th:each="u : ${users}">
-                    <td th:text="${u.az}"></td>
-                    <td th:text="${u.nev}"></td>
+                    <td th:text="${u.id}"></td>
                     <td th:text="${u.email}"></td>
                     <td th:text="${u.role}"></td>
                 </tr>
                 </tbody>
             </table>
-        </article>
     </div>
 </div>
 <script src="/js/main.js"></script>
