@@ -19,7 +19,6 @@ public class PilotaController {
         this.service = service;
     }
 
-    // GET: lista + üres űrlapok
     @GetMapping
     public String list(Model model) {
         model.addAttribute("pilotak", service.getall());
@@ -32,8 +31,6 @@ public class PilotaController {
         model.addAttribute("pilota", new Pilota());
         return "crud-add";
     }
-
-    // Új pilóta hozzáadása
     @PostMapping("/add")
     public String add(@ModelAttribute("pilota") Pilota pilota, Model model) {
         try {
@@ -44,8 +41,6 @@ public class PilotaController {
             return "crud-add";
         }
     }
-
-    // Keresés ID alapján
     @GetMapping("/search")
     public String search(@RequestParam Integer id, Model model) {
         model.addAttribute("pilotak", service.getone(id).map(List::of).orElse(List.of()));

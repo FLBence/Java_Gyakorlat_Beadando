@@ -3,52 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <title>Főoldal</title>
-    <link rel="stylesheet" th:href="@{/css/main.css}">
-</head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/css/main.css" />
+    <noscript><link rel="stylesheet" href="/css/noscript.css" /></noscript></head>
 
-<body class="fooldal-oldal">
-<a href="/" class="back-btn">Vissza</a>
+<body class="is-preload">
 
-<div class="fooldal-kontener">
-    <div class="container-box">
+<!-- Wrapper -->
+<div id="wrapper">
 
-        <h1 class="text-center mb-4">Üdvözlünk a Forma–1 Adatbázis Alkalmazásban!</h1>
+    <!-- Main content -->
+    <section id="main">
+        <div class="inner">
 
-        <p class="mb-4">
-            Ez a webalkalmazás a Forma–1 világához kapcsolódó adatok kezelését és megtekintését teszi lehetővé.
-            A rendszer különböző funkciókat biztosít a felhasználók és adminisztrátorok számára.
-        </p>
+            <a href="/" class="button small">Vissza</a>
 
-        <h2>🔧 Funkciók</h2>
-        <ul>
-            <li>Pilóták adatainak megtekintése</li>
-            <li>Felhasználói regisztráció és bejelentkezés</li>
-            <li>Üzenetek küldése regisztrált felhasználóknak</li>
-            <li>Admin funkciók (adatkezelés, törlés, módosítás)</li>
-        </ul>
+            <header>
+                <h1>Üdvözlünk a Forma–1 Adatbázis Alkalmazásban!</h1>
+                <p>Főoldal</p>
+            </header>
 
-        <h2 class="mt-4">🗄 Adatbázis</h2>
-        <p>
-            A projekt egy <strong>Forma–1 tematikájú adatbázist</strong> használ, amely az alábbi adatokat tartalmazza:
-        </p>
-        <ul>
-            <li>Pilóták adatai</li>
-            <li>Felhasználók és szerepköreik</li>
-            <li>Üzenetek</li>
-        </ul>
+            <p>
+                Ez a webalkalmazás a Forma–1 világához kapcsolódó adatok kezelését és megtekintését teszi lehetővé.
+                A rendszer különböző funkciókat biztosít a felhasználók és adminisztrátorok számára.
+            </p>
 
-        <h2 class="mt-4">🖥 Felhasznált technológiák</h2>
-        <ul>
-            <li>Java 17</li>
-            <li>Spring Boot, Spring MVC, Spring Security</li>
-            <li>Thymeleaf templaterendszer</li>
-            <li>MySQL adatbázis</li>
-            <li>JPA / Hibernate</li>
-            <li>HTML, CSS, Bootstrap</li>
-        </ul>
+            <h2>Funkciók</h2>
+            <ul>
+                <li>Pilóták adatainak megtekintése</li>
+                <li>Felhasználói regisztráció és bejelentkezés</li>
+                <li>Üzenetek küldése regisztrált felhasználóknak</li>
+                <li>Admin funkciók (adatkezelés, törlés, módosítás)</li>
+                <li>Diagram a pilóták adataival kapcsolatban</li>
+                <li>CRUD menü adatok frissen tartása érdekében</li>
+            </ul>
 
-    </div>
+            <h2>Adatbázis</h2>
+            <ul>
+                <li>Pilóták, GP-k és az eredmények adatai</li>
+                <li>Felhasználók és szerepköreik</li>
+                <li>Üzenetek</li>
+            </ul>
+
+            <h2>Felhasznált technológiák</h2>
+            <ul>
+                <li>Java 21</li>
+                <li>Spring Boot, Spring MVC, Spring Security</li>
+                <li>Thymeleaf templaterendszer</li>
+                <li>MySQL adatbázis</li>
+                <li>JPA / Hibernate</li>
+                <li>HTML, CSS, JS, Bootstrap</li>
+            </ul>
+
+        </div>
+    </section>
+
 </div>
+
+<!-- Dimension Scripts -->
+<script th:src="@{/assets/js/jquery.min.js}"></script>
+<script th:src="@{/assets/js/browser.min.js}"></script>
+<script th:src="@{/assets/js/breakpoints.min.js}"></script>
+<script th:src="@{/assets/js/util.js}"></script>
+<script th:src="@{/assets/js/main.js}"></script>
 
 </body>
 </html>

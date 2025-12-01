@@ -7,6 +7,7 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
+<a href="/" class="back-btn">Vissza</a>
 <div style="width: 1000px; height: 700px; margin: 0 auto;">
     <h2>F1 Pilóták Nemzetiségi Eloszlása</h2>
     <canvas id="f1Chart" width="1000" height="600"></canvas>
@@ -37,7 +38,7 @@
             },
             options: {
                 responsive: true,
-                maintainAspectRatio: false, // fontos, hogy a div méretéhez igazodjon
+                maintainAspectRatio: false,
                 plugins: {
                     legend: {
                         position: 'top',
